@@ -23,9 +23,11 @@ export default function Navbar() {
 
   const menuItems = [
     { label: 'Beranda', href: '/', id: 'beranda' },
+    { label: 'Tentang SAKA', href: '/about', id: 'about' },
+    { label: 'Berita', href: '/berita', id: 'berita' },
     {
-      label: 'About',
-      id: 'about',
+      label: 'Informasi',
+      id: 'informasi',
       submenu: [
         { label: 'Konsentrasi Keahlian', href: '/konsentrasi-keahlian' },
         { label: 'Ekstrakurikuler', href: '/ekstrakurikuler' },
@@ -33,7 +35,6 @@ export default function Navbar() {
       ],
     },
     { label: 'BKK', href: '/bkk', id: 'bkk' },
-    { label: 'SAKA News', href: '/saka-news', id: 'sakanews' },
   ]
 
   return (

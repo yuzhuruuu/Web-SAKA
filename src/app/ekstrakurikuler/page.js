@@ -92,7 +92,7 @@ export default function Ekstrakurikuler() {
 
   return (
     <div className="container py-12">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">Daftar Ekstrakurikuler</h1>
+      <h1 className="text-4xl font-bold mb-4 text-gray-800 pt-8">Daftar Ekstrakurikuler</h1>
       <p className="text-gray-600 mb-12 max-w-2xl">
         Pengembangan diri siswa tidak hanya dilakukan di dalam kelas. SMK Negeri 1 Kawunganten menyediakan berbagai wadah ekstrakurikuler untuk mengasah minat, bakat, organisasi, dan soft skills siswa.
       </p>

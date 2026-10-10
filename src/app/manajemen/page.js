@@ -59,7 +59,7 @@ export default function Manajemen() {
 
   return (
     <div className="container py-12">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">Struktur Manajemen & Tata Usaha</h1>
+      <h1 className="text-4xl font-bold mb-4 text-gray-800 pt-8">Struktur Manajemen & Tata Usaha</h1>
       <p className="text-gray-600 mb-12 max-w-2xl">
         Selamat datang di halaman Manajemen SMK Negeri 1 Kawunganten. Sinergi kepemimpinan dan tata kelola administrasi yang akuntabel adalah kunci kami dalam mencetak lulusan SMK yang berkarakter, unggul, dan siap kerja.
       </p>

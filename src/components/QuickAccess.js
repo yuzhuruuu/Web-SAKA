@@ -3,7 +3,7 @@ export default function QuickAccess() {
     {
       title: 'Informasi SPMB 2026',
       desc: 'Pelajari persyaratan dan jadwal pendaftaran siswa baru',
-      href: '/saka-news',
+      href: '/ppdb',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 16H5V4h14v14zm-5.04-6.71l-2.75 3.54-1.3-1.54c-.3-.36-.77-.36-1.07 0-.3.36-.3.96 0 1.32l1.98 2.36c.3.36.77.36 1.07 0L17.1 9.7c.3-.36.3-.96 0-1.32-.3-.36-.77-.36-1.07 0l-4.04 4.85z"/>
@@ -11,9 +11,9 @@ export default function QuickAccess() {
       )
     },
     {
-      title: 'Informasi Tendik',
-      desc: 'Karir dan informasi tenaga didik dan kependidikan',
-      href: '/about',
+      title: 'Informasi Pelayanan',
+      desc: 'Tim manajemen SAKA siap membantu Anda',
+      href: '/manajemen',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>

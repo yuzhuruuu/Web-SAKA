@@ -1,17 +1,15 @@
 import BeritaCard from '@/components/BeritaCard'
 import { beritaList } from '@/data/berita'
 
-export default function SakaNews() {
+export default function Berita() {
   return (
     <div className="container py-12">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">SAKA News</h1>
+      <div className="mb-12 pt-8">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">Berita & Pengumuman</h1>
         <p className="text-gray-600 max-w-2xl">
           Portal berita terkini SMK Negeri 1 Kawunganten. Dapatkan informasi terbaru tentang kegiatan, prestasi, dan pengumuman penting sekolah.
         </p>
       </div>
-
-      {/* Filter kategori bisa ditambahkan di sini jika diperlukan */}
 
       {/* Grid Berita */}
       <div className="grid grid-cols-3 gap-6 mb-12">

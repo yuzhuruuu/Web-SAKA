@@ -53,7 +53,7 @@ export default function Perpustakaan() {
   return (
     <div className="container py-12">
       {/* Header */}
-      <div className="bg-white p-12 rounded-lg shadow-md mb-12 border border-gray-100 text-center">
+      <div className="pt-8 mb-12">
         <h1 className="text-4xl font-bold mb-2 text-gray-800">Perpustakaan & Pusat Literasi Digital</h1>
         <p className="text-xl text-gray-600 mb-2">SMK NEGERI 1 KAWUNGANTEN (SMK SAKA)</p>
         <p className="italic text-lg text-gray-500">"Jendela Dunia, Jantung Literasi, dan Inspirasi Masa Depan"</p>

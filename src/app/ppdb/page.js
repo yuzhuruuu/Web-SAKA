@@ -50,7 +50,7 @@ export default function PPDB() {
 
   return (
     <div className="container py-12">
-      <div className="bg-white p-8 rounded-lg shadow-md mb-12 border border-gray-100">
+      <div className="pt-8 mb-12">
         <h1 className="text-4xl font-bold mb-4 text-gray-800">Informasi PPDB 2026/2027</h1>
         <p className="text-gray-600 text-lg">
           Penerimaan Peserta Didik Baru SMK Negeri 1 Kawunganten Tahun Ajaran 2026/2027
