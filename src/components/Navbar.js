@@ -24,7 +24,6 @@ export default function Navbar() {
   const menuItems = [
     { label: 'Beranda', href: '/', id: 'beranda' },
     { label: 'Tentang SAKA', href: '/about', id: 'about' },
-    { label: 'Berita', href: '/berita', id: 'berita' },
     {
       label: 'Informasi',
       id: 'informasi',
@@ -34,6 +33,7 @@ export default function Navbar() {
         { label: 'Manajemen', href: '/manajemen' },
       ],
     },
+    { label: 'Berita', href: '/berita', id: 'berita' },
     { label: 'BKK', href: '/bkk', id: 'bkk' },
   ]
 

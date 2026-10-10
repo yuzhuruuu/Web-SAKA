@@ -46,7 +46,7 @@ export default function Home() {
               </p>
 
               <p>
-                Kami menyadari bahwa keberhasilan pendidikan tidak lepas dari dukungan, kerja sama, dan kontribusi dari seluruh pihak—mulai dari para guru, staf tata usaha, komite sekolah, orang tua, hingga seluruh stakeholder terkait. Oleh karena itu, kami sangat terbuka menerima masukan, saran, dan kritik yang membangun demi kemajuan sekolah yang kita cintai ini.
+                Kami menyadari bahwa keberhasilan pendidikan tidak lepas dari dukungan, kerja sama, dan kontribusi dari seluruh pihak, mulai dari para guru, staf tata usaha, komite sekolah, orang tua, hingga seluruh stakeholder terkait. Oleh karena itu, kami sangat terbuka menerima masukan, saran, dan kritik yang membangun demi kemajuan sekolah yang kita cintai ini.
               </p>
 
               <p>
