@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import PagesLayout from '@/components/PagesLayout'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Ekstrakurikuler() {
   const [activeFilter, setActiveFilter] = useState('semua')
@@ -91,61 +93,62 @@ export default function Ekstrakurikuler() {
     : ekstrakurikulers.filter(e => e.category === activeFilter)
 
   return (
-    <div className="container py-12">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800 pt-8">Daftar Ekstrakurikuler</h1>
-      <p className="text-gray-600 mb-12 max-w-2xl">
-        Pengembangan diri siswa tidak hanya dilakukan di dalam kelas. SMK Negeri 1 Kawunganten menyediakan berbagai wadah ekstrakurikuler untuk mengasah minat, bakat, organisasi, dan soft skills siswa.
-      </p>
-
+    <PagesLayout
+      label="PENGEMBANGAN DIRI"
+      title="Daftar Ekstrakurikuler"
+      subtitle="Pengembangan diri siswa melalui berbagai wadah ekstrakurikuler"
+      breadcrumb={[
+        { label: 'Beranda', href: '/' },
+        { label: 'Tentang SAKA', href: null },
+        { label: 'Ekstrakurikuler', href: null }
+      ]}
+    >
       {/* Filter Buttons */}
-      <div className="flex gap-3 mb-12 flex-wrap">
-        {filters.map((filter) => (
-          <button
-            key={filter.id}
-            onClick={() => setActiveFilter(filter.id)}
-            className={`px-4 py-2 rounded-full font-medium transition ${
-              activeFilter === filter.id
-                ? 'bg-primary text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
-          >
-            {filter.label}
-          </button>
-        ))}
-      </div>
+      <ScrollReveal animation="fade-in-up" delay={0}>
+        <div className="flex gap-3 mb-12 flex-wrap">
+          {filters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`px-4 py-2 rounded-full font-medium transition ${
+                activeFilter === filter.id
+                  ? 'bg-primary-dark text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+      </ScrollReveal>
 
       {/* Ekstrakurikuler Grid */}
-      <div className="grid grid-cols-3 gap-6">
-        {filtered.map((ekskul) => (
-          <div
-            key={ekskul.id}
-            id={ekskul.id}
-            className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition border border-gray-100 scroll-mt-24"
-          >
-            {/* Image */}
-            <div className="relative h-40 bg-gray-200 overflow-hidden">
-              {ekskul.image ? (
-                <img
-                  src={ekskul.image}
-                  alt={ekskul.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-6xl bg-gray-100">
-                  {ekskul.icon}
-                </div>
-              )}
-            </div>
-
-            {/* Content */}
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-3xl">{ekskul.icon}</span>
-                <h3 className="text-lg font-bold text-gray-800">{ekskul.name}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {filtered.map((ekskul, idx) => (
+          <ScrollReveal key={ekskul.id} animation="fade-in-up" delay={idx * 50}>
+            <div
+              id={ekskul.id}
+              className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 scroll-mt-24"
+            >
+              {/* Image */}
+              <div className="relative h-40 bg-gray-200 overflow-hidden">
+                {ekskul.image && (
+                  <img
+                    src={ekskul.image}
+                    alt={ekskul.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                  />
+                )}
+                <div className="absolute inset-0 bg-primary-dark opacity-0 group-hover:opacity-20 transition"></div>
               </div>
-              <p className="text-sm text-gray-600 leading-relaxed">{ekskul.desc}</p>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-primary-dark mb-3">{ekskul.name}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{ekskul.desc}</p>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
 
@@ -154,6 +157,6 @@ export default function Ekstrakurikuler() {
           <p className="text-gray-500 text-lg">Tidak ada ekstrakurikuler dalam kategori ini</p>
         </div>
       )}
-    </div>
+    </PagesLayout>
   )
 }

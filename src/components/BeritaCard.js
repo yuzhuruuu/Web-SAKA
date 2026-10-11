@@ -16,7 +16,7 @@ export default function BeritaCard({ id, judul, tanggal, ringkasan, gambar }) {
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">{ringkasan}</p>
         <Link 
           href={`/berita/${id}`}
-          className="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition font-medium text-sm"
+          className="inline-block bg-primary-dark text-white px-4 py-2 rounded hover:shadow-lg transition font-medium text-sm"
         >
           Baca Selengkapnya
         </Link>

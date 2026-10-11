@@ -26,8 +26,9 @@ export default function Navbar() {
     { label: 'Tentang SAKA', href: '/about', id: 'about' },
     {
       label: 'Informasi',
-      id: 'informasi',
+      id: 'tentangsaka',
       submenu: [
+        { label: 'Sambutan Kepala', href: '/sambutan-kepala-sekolah' },
         { label: 'Konsentrasi Keahlian', href: '/konsentrasi-keahlian' },
         { label: 'Ekstrakurikuler', href: '/ekstrakurikuler' },
         { label: 'Manajemen', href: '/manajemen' },
@@ -38,20 +39,27 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className={`fixed z-50 bg-white/20 backdrop-blur-md border border-white/30 transition-all ease-out ${
+    <nav className={`fixed z-50 w-full top-0 left-0 transition-all duration-300 ease-in-out m-0 p-0 ${
       isScrolled 
-        ? 'duration-500 top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-6xl rounded-full shadow-lg py-4' 
-        : 'duration-500 top-0 left-0 right-0 w-full rounded-none shadow-md py-6'
+        ? 'bg-primary-dark shadow-lg' 
+        : 'bg-transparent'
     }`}>
-      <div className="px-8">
-        <div className="flex items-center justify-between">
+      {/* Overlay gradient saat transparan dengan bayangan teks */}
+      {!isScrolled && (
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent pointer-events-none"></div>
+      )}
+
+      <div className="relative px-8 py-6">
+        <div className="flex items-center justify-between max-w-6xl mx-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden flex-shrink-0 shadow-sm border border-gray-100">
               <img src="/logo.png" alt="Logo SMK" className="w-8 h-8 object-contain" />
             </div>
             <div>
-              <div className="text-sm font-bold text-gray-800">SMKN 1 Kawunganten</div>
+              <div className="text-sm font-bold text-white">
+                SMKN 1 Kawunganten
+              </div>
             </div>
           </Link>
 
@@ -67,15 +75,15 @@ export default function Navbar() {
                 {item.submenu ? (
                   <>
                     <button
-                      className={`text-sm font-medium transition relative pb-1 ${
+                      className={`text-sm font-medium transition relative pb-1 drop-shadow-md ${
                         isDropdownActive(item.submenu.map(s => s.href))
-                          ? 'text-primary font-bold'
-                          : 'text-gray-800 hover:text-primary'
+                          ? 'text-white font-bold'
+                          : 'text-white hover:text-blue-200'
                       }`}
                     >
                       {item.label}
                       {isDropdownActive(item.submenu.map(s => s.href)) && (
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-300"></span>
                       )}
                     </button>
 
@@ -101,15 +109,15 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`text-sm font-medium transition relative pb-1 block ${
+                    className={`text-sm font-medium transition relative pb-1 block drop-shadow-md ${
                       isActive(item.href)
-                        ? 'text-primary font-bold'
-                        : 'text-gray-800 hover:text-primary'
+                        ? 'text-white font-bold'
+                        : 'text-white hover:text-blue-200'
                     }`}
                   >
                     {item.label}
                     {isActive(item.href) && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-300"></span>
                     )}
                   </Link>
                 )}
@@ -121,4 +129,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
