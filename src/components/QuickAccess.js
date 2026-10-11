@@ -7,7 +7,7 @@ import ScrollReveal from '@/components/ScrollReveal'
 export default function QuickAccess() {
   const items = [
     {
-      title: 'Informasi SPMB 2026',
+      title: 'Informasi SPMB 2027',
       desc: 'Pelajari persyaratan dan jadwal pendaftaran siswa baru',
       href: '/ppdb',
       icon: FileText

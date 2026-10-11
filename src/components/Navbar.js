@@ -28,7 +28,7 @@ export default function Navbar() {
       label: 'Informasi',
       id: 'tentangsaka',
       submenu: [
-        { label: 'Sambutan Kepala', href: '/sambutan-kepala-sekolah' },
+        { label: 'Sambutan', href: '/sambutan-kepala-sekolah' },
         { label: 'Konsentrasi Keahlian', href: '/konsentrasi-keahlian' },
         { label: 'Ekstrakurikuler', href: '/ekstrakurikuler' },
         { label: 'Manajemen', href: '/manajemen' },

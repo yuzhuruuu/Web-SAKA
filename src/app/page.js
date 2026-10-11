@@ -4,6 +4,7 @@ import QuickAccess from '@/components/QuickAccess'
 import SchoolInfo from '@/components/SchoolInfo'
 import SambutanKepalaSekolah from '@/components/SambutanKepalaSekolah'
 import BeritaCard from '@/components/BeritaCard'
+import GalleryMarquee from '@/components/GalleryMarquee'
 import ScrollReveal from '@/components/ScrollReveal'
 import { beritaList } from '@/data/berita'
 import Link from 'next/link'
@@ -56,6 +57,9 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
+
+      {/* Galeri Sekolah - Section Baru */}
+      <GalleryMarquee />
 
       {/* Pre-Footer CTA */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-16 px-6">

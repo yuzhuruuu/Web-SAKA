@@ -35,7 +35,7 @@ export default function SambutanKepalaSekolah() {
               {/* Info */}
               <div className="p-6 text-center">
                 <p className="text-xs font-bold text-primary-dark mb-2">KEPALA SEKOLAH</p>
-                <h3 className="text-lg font-bold text-gray-800">Agus Darmono, S.Pd., M.Pd.</h3>
+                <h3 className="text-lg font-bold text-gray-800">Mukholid Anshori</h3>
                 <p className="text-sm text-gray-600 mt-2">Kepala SMK Negeri 1 Kawunganten</p>
               </div>
             </div>

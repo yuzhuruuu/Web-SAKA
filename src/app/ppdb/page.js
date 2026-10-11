@@ -8,27 +8,27 @@ export default function PPDB() {
   const jurusan = [
     {
       name: 'Teknik Kendaraan Ringan Otomotif (TKRO)',
-      kuota: 60,
+      kuota: 108,
       deskripsi: 'Program keahlian untuk perawatan dan perbaikan kendaraan roda empat'
     },
     {
       name: 'Teknik Sepeda Motor (TSM)',
-      kuota: 40,
+      kuota: 108,
       deskripsi: 'Program keahlian untuk mekanik dan perawatan kendaraan roda dua'
     },
     {
       name: 'Desain Komunikasi Visual (DKV)',
-      kuota: 40,
+      kuota: 108,
       deskripsi: 'Program keahlian desain grafis, fotografi, dan videografi'
     },
     {
       name: 'Animasi',
-      kuota: 35,
+      kuota: 72,
       deskripsi: 'Program keahlian produksi animasi 2D dan 3D'
     },
     {
       name: 'Pengembangan Perangkat Lunak dan Gim (PPLG)',
-      kuota: 35,
+      kuota: 72,
       deskripsi: 'Program keahlian pemrograman web, mobile, dan game development'
     }
   ]
@@ -44,19 +44,19 @@ export default function PPDB() {
   ]
 
   const tahapan = [
-    { no: 1, tahap: 'Pendaftaran Online', tanggal: '15 - 30 Agustus 2026' },
-    { no: 2, tahap: 'Verifikasi Berkas', tanggal: '1 - 5 September 2026' },
-    { no: 3, tahap: 'Tes Akademik & Psikotes', tanggal: '10 - 15 September 2026' },
-    { no: 4, tahap: 'Tes Kesehatan', tanggal: '18 - 20 September 2026' },
-    { no: 5, tahap: 'Pengumuman Hasil Akhir', tanggal: '25 September 2026' },
-    { no: 6, tahap: 'Pendaftaran Ulang', tanggal: '27 - 30 September 2026' }
+    { no: 1, tahap: 'Pendaftaran Online', tanggal: '15 - 30 Mei 2027' },
+    { no: 2, tahap: 'Verifikasi Berkas', tanggal: '1 - 5 Juni 2027' },
+    { no: 3, tahap: 'Tes Akademik & Psikotes', tanggal: '10 - 15 Juni 2027' },
+    { no: 4, tahap: 'Tes Kesehatan', tanggal: '18 - 20 Juni 2027' },
+    { no: 5, tahap: 'Pengumuman Hasil Akhir', tanggal: '25 Juni 2027' },
+    { no: 6, tahap: 'Pendaftaran Ulang', tanggal: '1 - 5 Juli 2027' }
   ]
 
   return (
     <PagesLayout
       label="PENERIMAAN PESERTA DIDIK"
-      title="Informasi PPDB 2026/2027"
-      subtitle="Penerimaan Peserta Didik Baru SMK Negeri 1 Kawunganten Tahun Ajaran 2026/2027"
+      title="Informasi PPDB 2027/2028"
+      subtitle="Penerimaan Peserta Didik Baru SMK Negeri 1 Kawunganten Tahun Ajaran 2027/2028"
       breadcrumb={[
         { label: 'Beranda', href: '/' },
         { label: 'PPDB', href: null }
