@@ -26,12 +26,23 @@ export default function SchoolIntro() {
           
           {/* Deskripsi dengan animasi muncul dari bawah ke atas */}
           <p 
-            className={`text-xl md:text-2xl text-gray-600 mb-10 transition-all duration-700 delay-200 ${
+            className={`text-xl md:text-2xl text-gray-600 mb-4 transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
           >
             Selamat datang di website resmi SMK N 1 Kawunganten
           </p>
+
+          {/* Tagline/Slogan dengan animasi muncul dari bawah ke atas */}
+          <div 
+            className={`mb-10 transition-all duration-700 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+            }`}
+          >
+            <span className="inline-block bg-blue-50 text-primary-dark px-6 py-2 rounded-full text-lg font-semibold italic border-2 border-primary-dark/20">
+              "Sekolah Unggul Berwawasan Lingkungan"
+            </span>
+          </div>
           
           {/* Tombol dengan animasi muncul dari bawah ke atas */}
           <div 

@@ -1,12 +1,12 @@
-'use client'
-
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import PagesLayout from '@/components/PagesLayout'
 import { beritaList } from '@/data/berita'
 
-export default function DetailBerita({ params }) {
-  const berita = beritaList.find(b => b.id === params.id)
+export default async function DetailBerita({ params }) {
+  // Await params untuk Next.js 15+
+  const { id } = await params
+  const berita = beritaList.find(b => b.id === id)
 
   if (!berita) {
     return (
@@ -30,6 +30,7 @@ export default function DetailBerita({ params }) {
 
   return (
     <PagesLayout
+      label="BERITA & INFORMASI"
       title={berita.judul}
       subtitle={berita.tanggal}
       breadcrumb={[
@@ -38,31 +39,47 @@ export default function DetailBerita({ params }) {
         { label: berita.judul, href: null }
       ]}
     >
-      <ScrollReveal animation="fade-in-up" delay={100}>
-        <article className="bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden">
+      <ScrollReveal animation="fade-in-up" delay={0}>
+        <article className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
           {/* Image */}
-          <ScrollReveal animation="fade-in-up" delay={150}>
-            <div className="w-full h-96 overflow-hidden">
-              <img
-                src={berita.gambar}
-                alt={berita.judul}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-          </ScrollReveal>
+          <div className="w-full h-96 overflow-hidden bg-gray-200">
+            <img
+              src={berita.gambar}
+              alt={berita.judul}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
 
           {/* Content */}
-          <div className="p-8">
-            <ScrollReveal animation="fade-in-up" delay={200}>
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                <p>{berita.isi}</p>
+          <div className="p-8 md:p-12">
+            <ScrollReveal animation="fade-in-up" delay={100}>
+              <div className="mb-6">
+                <p className="text-sm text-primary-dark font-semibold mb-2">{berita.tanggal}</p>
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{berita.judul}</h1>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal animation="fade-in-up" delay={300}>
-              <div className="mt-12 pt-8 border-t border-gray-200">
-                <Link href="/berita" className="inline-block bg-primary-dark text-white px-6 py-3 rounded-lg hover:shadow-lg transition-transform">
-                  Kembali ke Berita
+            <ScrollReveal animation="fade-in-up" delay={150}>
+              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+                {berita.isi.split('\n\n').map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-in-up" delay={200}>
+              <div className="mt-12 pt-8 border-t border-gray-200 flex gap-4">
+                <Link 
+                  href="/berita" 
+                  className="inline-flex items-center gap-2 bg-primary-dark text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105"
+                >
+                  ← Kembali ke Berita
+                </Link>
+                <Link 
+                  href="/" 
+                  className="inline-flex items-center gap-2 border-2 border-primary-dark text-primary-dark px-6 py-3 rounded-lg hover:bg-primary-dark hover:text-white transition-all duration-300"
+                >
+                  Beranda
                 </Link>
               </div>
             </ScrollReveal>

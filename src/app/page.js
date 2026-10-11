@@ -1,6 +1,7 @@
 import YouTubeHero from '@/components/YouTubeHero'
 import SchoolIntro from '@/components/SchoolIntro'
 import QuickAccess from '@/components/QuickAccess'
+import SchoolInfo from '@/components/SchoolInfo'
 import SambutanKepalaSekolah from '@/components/SambutanKepalaSekolah'
 import BeritaCard from '@/components/BeritaCard'
 import ScrollReveal from '@/components/ScrollReveal'
@@ -23,6 +24,9 @@ export default function Home() {
 
       {/* Sambutan Kepala Sekolah */}
       <SambutanKepalaSekolah />
+      
+      {/* School Info - Section Baru */}
+      <SchoolInfo />
 
       {/* Berita Terbaru */}
       <section className="container py-12">

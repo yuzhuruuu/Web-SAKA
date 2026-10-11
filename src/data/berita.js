@@ -37,7 +37,7 @@ export const beritaList = [
     tanggal: '20 Agustus 2026',
     ringkasan: 'Pasukan Pengibar Bendera (Paskibra) SMK Negeri 1 Kawunganten berhasil meraih juara pertama dalam kompetisi tingkat kabupaten.',
     gambar: '/news/lomba.png',
-    isi: 'Dengan dedikasi dan latihan intensif selama berbulan-bulan, Paskibra SMK Negeri 1 Kawunganten berhasil merebut gelar juara pertama dalam kompetisi Paskibra tingkat Kabupaten Cilacap. Tim yang terdiri dari 12 peserta ini menampilkan gerakan yang presisi, sinkron sempurna, dan penuh semangat nasionalisme. Kemenangan ini merupakan hasil dari pembinaan yang intensif oleh pembina ekstrakurikuler dan dedikasi tinggi dari seluruh anggota tim. Prestasi ini menjadi kebanggaan bagi sekolah dan membuka peluang untuk berkompetisi di tingkat provinsi.'
+    isi: 'Dengan dedikasi dan latihan intensif selama berbulan-bulan, Paskibra SMK Negeri 1 Kawunganten berhasil merebut gelar juara pertama dalam kompetisi Paskibra tingkat Kabupaten Cilacap. Tim yang terdiri dari 16 peserta ini menampilkan gerakan yang presisi, sinkron sempurna, dan penuh semangat nasionalisme. Kemenangan ini merupakan hasil dari pembinaan yang intensif oleh pembina ekstrakurikuler dan dedikasi tinggi dari seluruh anggota tim. Prestasi ini menjadi kebanggaan bagi sekolah dan membuka peluang untuk berkompetisi di tingkat provinsi.'
   },
   {
     id: '6',

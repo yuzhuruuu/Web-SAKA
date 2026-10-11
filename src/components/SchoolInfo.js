@@ -1,52 +1,100 @@
-export default function SchoolInfo() {
-  const dataBasic = [
-    { label: 'Nama Sekolah', value: 'SMK Negeri 1 Kawunganten' },
-    { label: 'NPSN', value: '20360491' },
-    { label: 'Status Sekolah', value: 'Negeri' },
-    { label: 'Kepala Sekolah', value: 'Mukholid Anshori' },
-    { label: 'Kurikulum', value: 'SMK Merdeka' },
-    { label: 'Waktu Belajar', value: 'Sehari Penuh / 5 Hari seminggu' },
-  ]
+'use client'
 
-  const facilities = [
-    'Ruang Kelas Berbasis Teori & Digital',
-    'Bengkel Praktik Otomotif Resmi (Standar Industri TKRO & TSM)',
-    'Laboratorium Komputer Multimedia & PPLG Terintegrasi',
-    'Studio Animasi Khusus Praktik Kerja Produksi',
-    'Perpustakaan Sekolah Terpadu',
-    'Fasilitas Olahraga & Area Hijau Ramah Lingkungan',
+import Link from 'next/link'
+import { GraduationCap, FileText, Trophy, Building2 } from 'lucide-react'
+import ScrollReveal from '@/components/ScrollReveal'
+
+export default function SchoolInfo() {
+  const stats = [
+    {
+      icon: GraduationCap,
+      value: '5',
+      label: 'Konsentrasi Keahlian'
+    },
+    {
+      icon: FileText,
+      value: 'Merdeka',
+      label: 'Kurikulum'
+    },
+    {
+      icon: Trophy,
+      value: 'Top 1',
+      label: 'Juara Krenova Kabupaten'
+    },
+    {
+      icon: Building2,
+      value: 'Banyak',
+      label: 'Mitra Industri (Nasmoko, AHM, dll)'
+    }
   ]
 
   return (
-    <section className="container py-12">
-      <h2 className="text-3xl font-bold mb-8 text-gray-800">Informasi Sekolah</h2>
-      
-      <div className="grid grid-cols-2 gap-8">
-        {/* Data Dasar */}
-        <div className="bg-white p-8 rounded-xl shadow-md">
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">Data Dasar</h3>
-          <div className="space-y-4">
-            {dataBasic.map((item, idx) => (
-              <div key={idx} className="border-b border-gray-200 pb-3">
-                <p className="text-sm text-gray-600 font-medium">{item.label}</p>
-                <p className="text-gray-800 font-semibold">{item.value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section className="container py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Kolom Kiri - Profil */}
+        <ScrollReveal animation="fade-in-left" delay={0}>
+          <div>
+            {/* Label dengan ikon centang */}
+            <div className="flex items-center gap-2 mb-4">
+              <span className="text-primary-dark text-lg">✓</span>
+              <p className="text-sm font-bold text-primary-dark tracking-wider">PROFIL SINGKAT</p>
+            </div>
 
-        {/* Fasilitas */}
-        <div className="bg-white p-8 rounded-xl shadow-md">
-          <h3 className="text-2xl font-bold mb-6 text-gray-800">Fasilitas Utama</h3>
-          <div className="space-y-3">
-            {facilities.map((facility, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                <span className="text-primary font-bold text-lg">✓</span>
-                <p className="text-gray-700">{facility}</p>
-              </div>
-            ))}
+            {/* Heading */}
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              SMK N 1 KAWUNGANTEN <span className="text-primary-dark">Dalam Angka.</span>
+            </h2>
+
+            {/* Deskripsi */}
+            <p className="text-gray-600 leading-relaxed mb-8">
+              SMK Negeri 1 Kawunganten (SMKSAKA) adalah salah satu sekolah menengah kejuruan negeri unggulan yang terletak di Kabupaten Cilacap, Jawa Tengah. Sekolah ini mengusung visi sebagai "Sekolah Unggul Berwawasan Lingkungan" dan menerapkan Kurikulum Merdeka dengan 5 hari belajar untuk mencetak lulusan yang siap kerja dan berprestasi.
+            </p>
+
+            {/* Tombol Outline */}
+            <div className="flex gap-4 flex-wrap">
+              <Link 
+                href="/about"
+                className="px-6 py-3 rounded-lg font-medium transition-all duration-300 border-2 border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white"
+              >
+                Tentang Sekolah
+              </Link>
+              <Link 
+                href="/konsentrasi-keahlian"
+                className="px-6 py-3 rounded-lg font-medium transition-all duration-300 border-2 border-primary-dark text-primary-dark hover:bg-primary-dark hover:text-white"
+              >
+                Program Keahlian
+              </Link>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
+
+        {/* Kolom Kanan - Statistik Grid 2x2 */}
+        <ScrollReveal animation="fade-in-right" delay={100}>
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, idx) => {
+              const IconComponent = stat.icon
+              return (
+                <div 
+                  key={idx}
+                  className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-start gap-4">
+                    {/* Ikon dengan background lingkaran */}
+                    <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-6 h-6 text-primary-dark" strokeWidth={2} />
+                    </div>
+
+                    {/* Angka dan Label */}
+                    <div>
+                      <p className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</p>
+                      <p className="text-sm text-gray-600 leading-tight">{stat.label}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   )
