@@ -1,4 +1,5 @@
-export const beritaList = [
+// Default berita list
+const defaultBeritaList = [
   {
     id: '1',
     judul: '1000 Domain Gratis untuk Jurusan Baru',
@@ -48,3 +49,17 @@ export const beritaList = [
     isi: 'Sebanyak 120 siswa dari program keahlian Teknik Kendaraan Ringan Otomotif (TKRO) dan Teknik Sepeda Motor (TSM) melakukan kunjungan industri ke fasilitas manufaktur PT Toyota Nasmoko dan Astra Honda Motor. Dalam kunjungan ini, siswa mendapatkan pemahaman mendalam tentang proses produksi, quality control, teknologi terkini dalam industri otomotif, serta peluang karir di industri. Kegiatan ini menjadi bagian penting dari kurikulum untuk mempersiapkan siswa menghadapi dunia kerja yang sesungguhnya dan membangun networking dengan industri mitra.'
   }
 ]
+
+// Function untuk get berita dari localStorage atau default
+export function getBeritaList() {
+  if (typeof window !== 'undefined') {
+    const stored = localStorage.getItem('berita_list')
+    if (stored) {
+      return JSON.parse(stored)
+    }
+  }
+  return defaultBeritaList
+}
+
+// Export default berita untuk compatibility
+export const beritaList = defaultBeritaList

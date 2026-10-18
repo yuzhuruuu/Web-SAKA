@@ -1,11 +1,18 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import BeritaCard from '@/components/BeritaCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import PagesLayout from '@/components/PagesLayout'
-import { beritaList } from '@/data/berita'
+import { getBeritaList } from '@/data/berita'
 
 export default function Berita() {
+  const [beritaList, setBeritaList] = useState([])
+
+  useEffect(() => {
+    setBeritaList(getBeritaList())
+  }, [])
+
   return (
     <PagesLayout
       label="INFORMASI"

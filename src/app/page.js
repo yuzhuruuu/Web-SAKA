@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import YouTubeHero from '@/components/YouTubeHero'
 import SchoolIntro from '@/components/SchoolIntro'
 import QuickAccess from '@/components/QuickAccess'
@@ -6,11 +9,16 @@ import SambutanKepalaSekolah from '@/components/SambutanKepalaSekolah'
 import BeritaCard from '@/components/BeritaCard'
 import GalleryMarquee from '@/components/GalleryMarquee'
 import ScrollReveal from '@/components/ScrollReveal'
-import { beritaList } from '@/data/berita'
+import { getBeritaList } from '@/data/berita'
 import Link from 'next/link'
 
 export default function Home() {
-  const beritaTerbaru = beritaList.slice(0, 3)
+  const [beritaTerbaru, setBeritaTerbaru] = useState([])
+
+  useEffect(() => {
+    const beritaList = getBeritaList()
+    setBeritaTerbaru(beritaList.slice(0, 3))
+  }, [])
 
   return (
     <>

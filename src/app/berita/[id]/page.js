@@ -1,12 +1,34 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import PagesLayout from '@/components/PagesLayout'
-import { beritaList } from '@/data/berita'
+import { getBeritaList } from '@/data/berita'
 
-export default async function DetailBerita({ params }) {
-  // Await params untuk Next.js 15+
-  const { id } = await params
-  const berita = beritaList.find(b => b.id === id)
+export default function DetailBerita() {
+  const params = useParams()
+  const [berita, setBerita] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const beritaList = getBeritaList()
+    const found = beritaList.find(b => b.id === params.id)
+    setBerita(found)
+    setLoading(false)
+  }, [params.id])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
 
   if (!berita) {
     return (
